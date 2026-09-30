@@ -1,0 +1,68 @@
+{
+  "compiler": "0.8.30+commit.73712a01.Emscripten.clang",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "registrant",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "fileHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "Recorded",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "recordedAt",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "fileHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "register",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b506101ff8061001f6000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c806311b2b4751461003b578063e1fa8e8414610075575b600080fd5b610063610049366004610178565b600060208181529281526040808220909352908152205481565b60405190815260200160405180910390f35b6100886100833660046101b0565b61008a565b005b806100c95760405162461bcd60e51b815260206004820152600a60248201526908adae0e8f240d0c2e6d60b31b60448201526064015b60405180910390fd5b33600090815260208181526040808320848452909152902054156101245760405162461bcd60e51b8152602060048201526012602482015271105b1c9958591e481c9959da5cdd195c995960721b60448201526064016100c0565b33600081815260208181526040808320858452825291829020429081905591519182528392917f2d61ef97c6c3c0c2ce158f36735b46768c28888d7276eabd051ede8f85308765910160405180910390a350565b6000806040838503121561018b57600080fd5b82356001600160a01b03811681146101a257600080fd5b946020939093013593505050565b6000602082840312156101c257600080fd5b503591905056fea26469706673582212209270ad5a4e7c23643f1b330b0b16242da0e929bd20ab96fd201190a3f2665cbf64736f6c634300081e0033"
+}

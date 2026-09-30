@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101b32">
+  <meta name="description" content="Register and verify file fingerprints on Ethereum Sepolia.">
+  <title>ProofMark · File fingerprint DApp</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="vendor/ethers.umd.min.js"></script>
+  <script defer src="config.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+<header><a class="brand" href="./"><span class="symbol">P</span> ProofMark</a><span class="network">Ethereum · Sepolia testnet</span></header>
+<main>
+  <section class="intro"><p class="eyebrow">A fingerprint. A timestamp. A verifiable record.</p><h1>Keep proof of your file.</h1><p>Register a file’s fingerprint on the blockchain. Check it again whenever you need.</p></section>
+  <div class="layout">
+    <section class="card"><div class="step">01 / SELECT A FILE</div><h2>Your file stays with you.</h2><p>Only its SHA-256 fingerprint goes on chain.</p>
+      <label class="drop" for="file"><span class="file-icon">＋</span><strong>Choose a file</strong><span>PDF, photo, document or any file · up to 25 MB</span><input id="file" type="file"></label>
+      <p id="filename" class="muted">No file selected</p>
+      <label for="hash">File fingerprint · SHA-256</label><textarea id="hash" rows="3" readonly placeholder="Your fingerprint will appear here"></textarea>
+      <button id="sample" class="secondary">Try a sample file</button>
+    </section>
+    <section class="card"><div class="step">02 / REGISTER & VERIFY</div><h2>Make it verifiable.</h2><p id="setup" class="notice"></p>
+      <button id="connect">Connect wallet</button><p id="account" class="muted">Wallet not connected</p>
+      <button id="register" disabled>Register fingerprint on chain</button>
+      <div class="divider"></div><label for="registrant">Registrant wallet address</label><input id="registrant" placeholder="0x…" spellcheck="false" autocomplete="off">
+      <p class="small">Use the wallet that originally registered this file.</p><button id="verify" class="secondary" disabled>Verify selected file</button>
+      <div id="status" role="status" aria-live="polite">Select a file to begin.</div><a id="transaction" hidden target="_blank" rel="noopener noreferrer">View transaction on Etherscan</a>
+    </section>
+  </div>
+  <details class="settings"><summary>Contract setup</summary><p>Connect a Sepolia wallet and deploy a new ProofMark contract, or enter an existing address. Deployment uses Sepolia test ETH for gas. To configure the site for every visitor, set the resulting address in public/config.js and redeploy to Render.</p><button id="deploy" class="secondary">Deploy a new contract on Sepolia</button><label for="contract">Sepolia contract address</label><input id="contract" placeholder="0x…" spellcheck="false"><button id="save" class="secondary">Use this contract on this browser</button><p id="contract-status" role="status"></p></details>
+  <section class="notes"><div><h3>On your phone</h3><p>Open this website inside your mobile wallet’s browser to connect and register. File hashing also works in a regular mobile browser.</p></div><div><h3>What does this prove?</h3><p>A wallet recorded this fingerprint at a block timestamp. It does not prove copyright, authorship, or the file’s original creation time.</p></div><div><h3>Testnet only</h3><p>Registration uses Sepolia test ETH for gas. Verification reads the chain and does not send a transaction.</p></div></section>
+</main><footer>ProofMark / A file fingerprint DApp · Built with ChatGPT</footer>
+</body></html>
